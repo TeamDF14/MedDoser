@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@meddoser.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guifx.IngestionController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="-Infinity" minHeight="0.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="50.0" prefHeight="50.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" GridPane.vgrow="NEVER">
+         <children>
+            <Button fx:id="btnCloseIngestionTime" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#closeIngestionTime" prefHeight="45.0" prefWidth="200.0" styleClass="buttonDispose" text="Abbrechen" HBox.hgrow="ALWAYS" />
+            <Button fx:id="btnSaveIngestionTime" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="buttonSubmit" text="Speichern" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox prefHeight="55.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/logo_meddoser.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblIngestionTimeHeader" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="50.0" text="Einnahme bestätigen" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnDeclineIngestion" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" text="Einnahme Ablehnen">
+               <HBox.margin>
+                  <Insets right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+         <children>
+            <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308">
+               <children>
+                  <Label fx:id="lblTimeOfUser" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="33.0" prefWidth="300.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin></Label>
+                  <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="300.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Slider fx:id="sldHours" majorTickUnit="1.0" max="23.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" min="0.0" minorTickCount="1" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" styleClass="sliderIngestionTime" VBox.vgrow="ALWAYS">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </Slider>
+                              <Label alignment="CENTER" text="Stunden">
+                                 <VBox.margin>
+                                    <Insets right="20.0" top="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Slider fx:id="sldMinutes" majorTickUnit="5.0" max="59.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" min="0.0" minorTickCount="5" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" styleClass="sliderIngestionTime" VBox.vgrow="ALWAYS" />
+                              <Label text="Minuten">
+                                 <VBox.margin>
+                                    <Insets right="20.0" top="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+            <TableView fx:id="tViewIngestionTime" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="tblIngestionTime" HBox.hgrow="ALWAYS">
+              <columns>
+
+                      <TableColumn fx:id="colNameIngestionTime" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" styleClass="tblColName" text="Name" />
+                      <TableColumn fx:id="colAmountIngestionTime" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" text="Menge" />
+                      <!--<TableColumn fx:id="colReasonIngestionTime" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" text="Grund" />-->
+
+              </columns>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </TableView>
+         </children>
+      </HBox>
+   </children>
+</GridPane>

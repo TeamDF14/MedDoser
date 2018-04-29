@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@meddoser.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guifx.ScanController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="234.0" minHeight="10.0" prefHeight="227.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="82.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="45.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+         <children>
+            <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="400.0">
+               <children>
+                  <Button fx:id="btnScanNow" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="175.0" prefWidth="550.0" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="10.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <Label fx:id="lblScanNow" styleClass="lblScanNow" />
+                     </graphic>
+                      <!--  "Warning" icon origin:  https://icons8.de/icon/5342/hohe-priorit%C3%A4t -->
+                      <!--
+                     <graphic>
+                        <ImageView fitHeight="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/warning.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                        -->
+                      
+
+                  </Button>
+
+                  <TextField fx:id="tfScannedString" alignment="BOTTOM_CENTER" promptText="UKF String goes here (will be unvisible in the final version)" styleClass="tfScanInputString" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Button fx:id="btnCloseRescan" cancelButton="true" maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" onAction="#closeRescan" prefHeight="45.0" styleClass="buttonDispose" text="Abbrechen" GridPane.rowIndex="3" />
+      <HBox maxWidth="1.7976931348623157E308" prefHeight="100.0" GridPane.hgrow="ALWAYS">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/logo_meddoser.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblIngestionTimeHeader" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="50.0" text="Medikationsplan einscannen">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </Label>
+            <!--<Label fx:id="lblCurrentDateScan" alignment="TOP_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Aktuelles Datum" HBox.hgrow="ALWAYS" />-->
+         </children>
+      </HBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+         <children>
+
+            <Label fx:id="lblScanStatus" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="80.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </children>
+</GridPane>

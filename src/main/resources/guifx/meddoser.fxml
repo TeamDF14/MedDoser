@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--<AnchorPane fx:id="anchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="684.0" prefWidth="1110.0" stylesheets="@meddoser.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guifx.MedicationOverviewController">
+   <children>-->
+<!--</children>
+</AnchorPane>-->
+
+<GridPane fx:id="rootGridPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@meddoser.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guifx.MedicationOverviewController">
+        <columnConstraints>
+          <ColumnConstraints hgrow="ALWAYS" maxWidth="2000" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="71.0" minHeight="60.0" prefHeight="71.0" vgrow="ALWAYS" />
+          <RowConstraints minHeight="10.0"  vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+            <TabPane fx:id="tabPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" tabClosingPolicy="UNAVAILABLE" tabMinHeight="55.0" tabMinWidth="185.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+              <tabs>
+                <Tab fx:id="tabPCM" closable="false" styleClass="tab-pane">
+               <content>
+                  <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="730.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="40.0" prefHeight="40.0" vgrow="NEVER" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="15.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+
+                         <TableView fx:id="tviewPCM" focusTraversable="false" prefWidth="750.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                <columns>
+                                    <TableColumn fx:id="colNamePCM" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" styleClass="tblColName" text="Name" />
+                                    <TableColumn fx:id="colAmountPCM" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" text="Menge" />
+                                    <TableColumn fx:id="colReasonPCM" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" text="Grund" />
+                                    <TableColumn fx:id="colButtonPCM" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" text="Bestätigen" />
+                                </columns>
+                         </TableView>
+
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.hgrow="ALWAYS">
+                           <children>
+                               <Button fx:id="btnSubmitAllPCM" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#updateAllMedicationsPCM" prefHeight="40.0" styleClass="buttonSubmit" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <!--<Button alignment="TOP_CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="15.0" text="Freitext-Section des Plans" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="2" />-->
+
+                     </children>
+                  </GridPane>
+               </content>
+                </Tab>
+                 <Tab fx:id="tabPCD" styleClass="tab-pane">
+                    <content>
+                        <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="355.0" prefWidth="730.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="40.0" prefHeight="40.0" vgrow="NEVER" />
+                                <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+
+                                <TableView fx:id="tviewPCD" focusTraversable="false" prefHeight="310.0" prefWidth="750.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                                    <columns>
+                                        <TableColumn fx:id="colNamePCD" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" styleClass="tblColName" text="Name" />
+                                        <TableColumn fx:id="colAmountPCD" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" text="Menge" />
+                                        <TableColumn fx:id="colReasonPCD" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" text="Grund" />
+                                        <TableColumn fx:id="colButtonPCD" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" text="Bestätigen" />
+                                    </columns>
+                                </TableView>
+
+                                <HBox prefHeight="100.0" prefWidth="200.0" GridPane.hgrow="ALWAYS">
+                                    <children>
+                                        <Button fx:id="btnSubmitAllPCD" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#updateAllMedicationsPCD" prefHeight="40.0" styleClass="buttonSubmit" HBox.hgrow="ALWAYS" />
+                                    </children>
+                                </HBox>
+
+                            </children>
+                        </GridPane>
+                    </content>
+                </Tab>
+                  <Tab fx:id="tabPCV">
+                      <content>
+                          <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="355.0" prefWidth="730.0">
+                              <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                  <RowConstraints minHeight="40.0" prefHeight="40.0" vgrow="NEVER" />
+                                  <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                              <children>
+
+                                  <TableView fx:id="tviewPCV" focusTraversable="false" prefHeight="310.0" prefWidth="750.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                                      <columns>
+                                          <TableColumn fx:id="colNamePCV" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" styleClass="tblColName" text="Name" />
+                                          <TableColumn fx:id="colAmountPCV" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" text="Menge" />
+                                          <TableColumn fx:id="colReasonPCV" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" text="Grund" />
+                                          <TableColumn fx:id="colButtonPCV" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" text="Bestätigen" />
+                                      </columns>
+                                  </TableView>
+
+                                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.hgrow="ALWAYS">
+                                      <children>
+                                          <Button fx:id="btnSubmitAllPCV" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#updateAllMedicationsPCV" prefHeight="40.0" styleClass="buttonSubmit" HBox.hgrow="ALWAYS" />
+                                      </children>
+                                  </HBox>
+
+                              </children>
+                          </GridPane>
+                      </content>
+                  </Tab>
+                  <Tab fx:id="tabHS" styleClass="tab-pane">
+                      <content>
+                          <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="355.0" prefWidth="730.0">
+                              <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                  <RowConstraints minHeight="40.0" prefHeight="40.0" vgrow="NEVER" />
+                                  <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                              <children>
+
+                                  <TableView fx:id="tviewHS" focusTraversable="false" prefHeight="310.0" prefWidth="750.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                                      <columns>
+                                          <TableColumn fx:id="colNameHS" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" styleClass="tblColName" text="Name" />
+                                          <TableColumn fx:id="colAmountHS" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" text="Menge" />
+                                          <TableColumn fx:id="colReasonHS" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" text="Grund" />
+                                          <TableColumn fx:id="colButtonHS" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" text="Bestätigen" />
+                                      </columns>
+                                  </TableView>
+
+                                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.hgrow="ALWAYS">
+                                      <children>
+                                          <Button fx:id="btnSubmitAllHS" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#updateAllMedicationsHS" prefHeight="40.0" styleClass="buttonSubmit" HBox.hgrow="ALWAYS" />
+                                      </children>
+                                  </HBox>
+
+                              </children>
+                          </GridPane>
+                      </content>
+                  </Tab>
+                  <Tab fx:id="tabUdef" styleClass="tab-pane">
+                      <content>
+                          <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                              <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              </columnConstraints>
+                              <rowConstraints>
+                                  <RowConstraints minHeight="40.0" prefHeight="40.0" vgrow="NEVER" />
+                                  <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                              </rowConstraints>
+                              <children>
+                                  <TableView fx:id="tviewUdef" focusTraversable="false" prefHeight="310.0" prefWidth="750.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                                      <columns>
+                                          <TableColumn fx:id="colNameUdef" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" styleClass="tblColName" text="Name" />
+                                          <TableColumn fx:id="colAmountUdef" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" text="Menge" />
+                                          <TableColumn fx:id="colReasonUdef" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" text="Grund" />
+                                          <TableColumn fx:id="colButtonUdef" editable="false" maxWidth="1.7976931348623157E308" resizable="false" sortable="false" text="Bestätigen" />
+                                      </columns>
+                                  </TableView>
+
+                                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.hgrow="ALWAYS">
+                                      <children>
+                                          <Button fx:id="btnSubmitAllUdef" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#updateAllMedicationsUdef" prefHeight="40.0" styleClass="buttonSubmit" HBox.hgrow="ALWAYS" />
+                                      </children>
+                                  </HBox>
+
+                              </children>
+                          </GridPane>
+                      </content>
+                  </Tab>
+              </tabs>
+         <padding>
+            <Insets top="2.0" />
+         </padding>
+            </TabPane>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="70.0" prefHeight="65.0" spacing="2.0" GridPane.hgrow="ALWAYS" GridPane.vgrow="NEVER">
+               <children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                        <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../images/logo_meddoser.png" />
+                           </image>
+                     <VBox.margin>
+                        <Insets bottom="-5.0" right="5.0" />
+                     </VBox.margin>
+                        </ImageView>
+                  <Label fx:id="lblCurrentDate" alignment="TOP_CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Aktuelles Datum" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+                  <Button fx:id="btnHistory" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="60.0" mnemonicParsing="false" prefHeight="60.0" HBox.hgrow="ALWAYS">
+                      <graphic>
+                          <ImageView fitHeight="30.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                  <Image url="@../images/history.png" />
+                              </image>
+                          </ImageView>
+                      </graphic>
+                  </Button>
+                  <Button fx:id="btnRescan" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="60.0" mnemonicParsing="false" prefHeight="60.0"  HBox.hgrow="ALWAYS" >
+                   <graphic>
+                       <ImageView fitHeight="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                               <Image url="@../images/scan.png" />
+                           </image>
+                       </ImageView>
+                   </graphic>
+                  </Button>
+                  <Button fx:id="btnShowPatient" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="60.0" mnemonicParsing="false" prefHeight="60.0"  HBox.hgrow="ALWAYS" >
+                   <graphic>
+                       <ImageView fitHeight="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                               <Image url="@../images/person.png" />
+                           </image>
+                       </ImageView>
+                   </graphic>
+                  </Button>
+                  <Button fx:id="btnEditTimes" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="60.0" mnemonicParsing="false" prefHeight="60.0" HBox.hgrow="ALWAYS" >
+                   <graphic>
+                       <ImageView fitHeight="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                               <Image url="@../images/clock.png" />
+                           </image>
+                       </ImageView>
+                   </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </GridPane>

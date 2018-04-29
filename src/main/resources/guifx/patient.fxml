@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@meddoser.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guifx.PatientController">
+   <children>
+      <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="50.0" prefHeight="50.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" GridPane.vgrow="NEVER">
+         <children>
+            <Button fx:id="btnClosePatient" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" prefHeight="45.0" styleClass="buttonDispose" text="Zurück zur Übersicht" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox prefHeight="55.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/logo_meddoser.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblPatientHeader" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="50.0" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </Label>
+            <Label fx:id="lblPatientDate" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" styleClass="lblPatientDescription" text="Ausst-Datum" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets right="10.0" />
+               </padding></Label>
+         </children>
+      </HBox>
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+         <children>
+            <GridPane maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="224.0" minWidth="10.0" prefWidth="176.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="180.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="lblPatientTitle" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" styleClass="lblEditTime" text="Patient" GridPane.columnSpan="2" />
+                  <Label fx:id="lblAuthorTitle" alignment="CENTER" maxWidth="1.7976931348623157E308" styleClass="lblEditTime" text="Arzt/Praxis" GridPane.columnIndex="2" GridPane.columnSpan="2" />
+
+                   <!-- patient column -->
+                  <Label fx:id="lblPatientName" styleClass="lblPatientDescription" text="lblPatientName" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <Label fx:id="lblPatientNameValue" text="lblPatientNameValue" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+
+                   <Label fx:id="lblPatientBirthday" styleClass="lblPatientDescription" text="lblPatientBirthday" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <Label fx:id="lblPatientBirthdayValue" text="lblPatientBirthdayValue" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+
+                   <Label fx:id="lblPatientGender" styleClass="lblPatientDescription" text="lblPatientGender" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                       <padding>
+                           <Insets left="10.0" />
+                       </padding></Label>
+                   <Label fx:id="lblPatientGenderValue" text="lblPatientGenderValue" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+
+                   <Label fx:id="lblPatientWeightHeight" styleClass="lblPatientDescription" text="lblPatientWeightHeight" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <Label fx:id="lblPatientWeightHeightValue" text="lblPatientWeightHeightValue" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+
+                   <Label fx:id="lblPatientMore" styleClass="lblPatientDescription" text="lblPatientMore" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                   <Label fx:id="lblPatientMoreValue" text="lblPatientMoreValue" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+
+                   <Label fx:id="lblPatientAllergies" styleClass="lblPatientDescription" text="lblPatientAllergies" GridPane.columnIndex="0" GridPane.rowIndex="6">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                   <Label fx:id="lblPatientAllergiesValue" text="lblPatientAllergiesValue" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+                   <!-- author column -->
+
+                   <Label fx:id="lblAuthorName" styleClass="lblPatientDescription" text="lblAuthorName" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                   <Label fx:id="lblAuthorNameValue" text="lblAuthorNameValue" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></Label>
+                   <Label fx:id="lblAuthorAddress" styleClass="lblPatientDescription" text="lblAuthorAddress" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                   <Label fx:id="lblAuthorAddressValue" text="lblAuthorAddressValue" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></Label>
+                   <Label fx:id="lblAuthorPhone" styleClass="lblPatientDescription" text="lblAuthorPhone" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                   <Label fx:id="lblAuthorPhoneValue" text="lblAuthorPhoneValue" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></Label>
+                   <Label fx:id="lblAuthorMail" styleClass="lblPatientDescription" text="lblAuthorMail" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                   <Label fx:id="lblAuthorMailValue" text="lblAuthorMailValue" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></Label>
+
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="-Infinity" minHeight="0.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+</GridPane>

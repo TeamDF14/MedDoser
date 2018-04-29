@@ -1,0 +1,146 @@
+
+/**
+This file contains the style that will be applied to the UI elements, if the style class was assigned to an element.
+ */
+
+/* Background color of the tab pane */
+.tab-pane *.tab-header-area *.tab-header-background {
+  -fx-background-color:transparent;
+}
+
+
+/* Formats the label within the 'scanNow' button on the scan stage */
+.lblScanNow{
+    -fx-font-weight: bold;
+    -fx-font-size: 1.2em;
+}
+
+/* The opacity set to 0 makes the text field completely invisible for the user, but the focus can still be set on it. */
+.tfScanInputString, tfScanInputString:focused {
+    -fx-opacity: 0.0 ;
+}
+
+/* Style of a highlighted item in the list view, if there are unsubmitted ingestions */
+.lViewHighlightedItem {
+    -fx-text-fill: red;
+    -fx-font-weight: bold;
+}
+
+/* Style of the effect on a button, when it gets pressed */
+.button:pressed {
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Header style of the 'edit times' stage */
+.lblEditTime{
+    -fx-font-weight: bold;
+    -fx-font-size: 23;
+}
+
+/* Column header style of the 'edit times' stage */
+.lblEditTimeColumnHeader{
+    -fx-font-size: 23;
+}
+
+/* Label style of the description of the most left column on the patient stage */
+.lblPatientDescription{
+    -fx-font-weight: bold;
+}
+
+/* Style for each <even> column of a table view on the 'edit times' stage */
+.colEditTimeStyleEven{
+    -fx-background-color: white;
+}
+
+/* Style for each <odd> column of a table view on the 'edit times' stage  */
+.colEditTimeStyleOdd{
+    -fx-background-color: #cfd2d6;
+}
+
+/** Style of the tab that holds unsubmitted medications on the primary stage **/
+.unsubmittedTab{
+    -fx-font-style: italic;
+    -fx-font-weight: bold;
+    -fx-font-size: 1.1em;
+    /*-fx-text-fill: red; // that does not work, you have to use a text element within the label. */
+}
+
+/** Style of the currently active tab on the primary stage (A blue line at the bottom) **/
+.activeTab {
+    -fx-background-insets: 52 0 0 0;
+    -fx-background-color: #00568c;
+    -fx-border-insets: 0 0 5 0;
+}
+
+/* Deprecated but still there */
+.label {
+	-fx-text-color: red;
+}
+
+/* Style of the disabled listView and its disabled cells of the history stage.
+The opacity is set back to the default value so that the user can see the items, but has no chance to click or touch on it. */
+.lViewHistory:disabled, .lViewHistory:disabled > *, .lViewHistory .list-cell:disabled {
+    -fx-opacity: 1.0 ;
+}
+
+/* Style of a selected list view item, almost equal to the highlight of the tabs on the primary stage */
+.lViewHistory .list-cell:selected{
+    -fx-background-insets: 62 0 0 0;
+    -fx-background-color: #00568c;
+    -fx-border-insets: 0 0 2 0;
+}
+
+
+/* Style of the submit buttons */
+/* (The green color from the medDoser logo is: #007015; */
+.buttonSubmit{
+    -fx-background-color: #09c41f;
+}
+
+/* Style of the decline buttons */
+.buttonDispose{
+    -fx-background-color:  #f40024;
+}
+
+/* Style of the thumb of the vertical sliders */
+.slider .thumb {
+    -fx-background-color: #00568c; /* (The blue color from the medDoser logo) */
+    -fx-background-radius: 10;
+    -fx-pref-height: 35;
+    -fx-pref-width: 68;
+    -fx-padding: 25;
+}
+
+/* Style of the table cells on the ingestion stage */
+.tblIngestionTime .table-row-cell {
+    -fx-pref-height: 40px;
+    -fx-font-size: 1.1em;
+}
+
+/* Style of the default background color of a table cell */
+.table-row-cell:empty .table-cell{
+	-fx-background-color: #f4f4f4;
+}
+
+/* Style for each <even> row of a table view */
+ .table-row-cell{
+    -fx-background-color: white;
+}
+
+/* Style for each <odd> row of a table view */
+.table-row-cell:odd{
+    -fx-background-color: #cfd2d6;
+}
+
+/*Style of an entire row in the table view when it is getting focused */
+.table-row:focused {
+    -fx-font-color: black;
+    -fx-color-label-visible: black;
+}
+
+/* Style of the 'name' column of a table view. */
+.tblColName {
+    -fx-font-weight: bold;
+}

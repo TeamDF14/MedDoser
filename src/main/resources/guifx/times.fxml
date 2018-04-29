@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@meddoser.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guifx.TimesController">
+   <children>
+      <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="50.0" prefHeight="50.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" GridPane.vgrow="NEVER">
+         <children>
+            <Button fx:id="btnCloseEditTimes" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" styleClass="buttonDispose" text="Abbrechen" HBox.hgrow="ALWAYS" />
+            <Button fx:id="btnSaveEditTimes" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="buttonSubmit" text="Speichern" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox prefHeight="55.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/logo_meddoser.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblEditTimesHeader" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="50.0" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+         <children>
+            <GridPane alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="142.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="171.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="142.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="145.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="251.0" vgrow="ALWAYS" />
+              </rowConstraints>
+               <children>
+                  <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="colEditTimeStyleOdd" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="lblEditTimePCM" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="33.0" prefWidth="300.0" styleClass="lblEditTime">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="300.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Slider fx:id="sldHoursPCM" majorTickUnit="1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  minorTickCount="1" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" styleClass="sliderIngestionTime" VBox.vgrow="ALWAYS" />
+                                    <Label fx:id="lblHoursPCM" alignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets right="20.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Slider fx:id="sldMinutesPCM" majorTickUnit="5.0" max="59.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" min="0.0" minorTickCount="5" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" styleClass="sliderIngestionTime" VBox.vgrow="ALWAYS" />
+                                    <Label fx:id="lblMinutesPCM">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets right="20.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+                    <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="colEditTimeStyleEven" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                        <children>
+                            <Label fx:id="lblEditTimePCD" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="33.0" prefWidth="300.0" styleClass="lblEditTime">
+                                <VBox.margin>
+                                    <Insets top="20.0" />
+                                </VBox.margin>
+                            </Label>
+                            <HBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="300.0" VBox.vgrow="ALWAYS">
+                                <children>
+                                    <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                        <children>
+                                            <Slider fx:id="sldHoursPCD" majorTickUnit="1.0"  maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minorTickCount="1" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" styleClass="sliderIngestionTime" VBox.vgrow="ALWAYS" />
+                                            <Label fx:id="lblHoursPCD" alignment="CENTER">
+                                                <font>
+                                                    <Font name="System Bold" size="15.0" />
+                                                </font>
+                                                <VBox.margin>
+                                                    <Insets right="20.0" top="10.0" />
+                                                </VBox.margin>
+                                            </Label>
+                                        </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                        <children>
+                                            <Slider fx:id="sldMinutesPCD" majorTickUnit="5.0" max="59.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" min="0.0" minorTickCount="5" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" styleClass="sliderIngestionTime" VBox.vgrow="ALWAYS" />
+                                            <Label fx:id="lblMinutesPCD">
+                                                <font>
+                                                    <Font name="System Bold" size="15.0" />
+                                                </font>
+                                                <VBox.margin>
+                                                    <Insets right="20.0" top="10.0" />
+                                                </VBox.margin>
+                                            </Label>
+                                        </children>
+                                    </VBox>
+                                </children>
+                                <padding>
+                                    <Insets bottom="20.0" />
+                                </padding>
+                            </HBox>
+                        </children>
+                    </VBox>
+                      <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="colEditTimeStyleOdd" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                          <children>
+                              <Label fx:id="lblEditTimePCV" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="33.0" prefWidth="300.0" styleClass="lblEditTime">
+                                  <VBox.margin>
+                                      <Insets top="20.0" />
+                                  </VBox.margin>
+                              </Label>
+                              <HBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="300.0" VBox.vgrow="ALWAYS">
+                                  <children>
+                                      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                          <children>
+                                              <Slider fx:id="sldHoursPCV" majorTickUnit="1.0"  maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  minorTickCount="1" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" styleClass="sliderIngestionTime" VBox.vgrow="ALWAYS" />
+                                              <Label fx:id="lblHoursPCV" alignment="CENTER">
+                                                  <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                  </font>
+                                                  <VBox.margin>
+                                                      <Insets right="20.0" top="10.0" />
+                                                  </VBox.margin>
+                                              </Label>
+                                          </children>
+                                      </VBox>
+                                      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                          <children>
+                                              <Slider fx:id="sldMinutesPCV" majorTickUnit="5.0" max="59.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" min="0.0" minorTickCount="5" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" styleClass="sliderIngestionTime" VBox.vgrow="ALWAYS" />
+                                              <Label fx:id="lblMinutesPCV">
+                                                  <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                  </font>
+                                                  <VBox.margin>
+                                                      <Insets right="20.0" top="10.0" />
+                                                  </VBox.margin>
+                                              </Label>
+                                          </children>
+                                      </VBox>
+                                  </children>
+                                  <padding>
+                                      <Insets bottom="20.0" />
+                                  </padding>
+                              </HBox>
+                          </children>
+                      </VBox>
+                      <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="colEditTimeStyleEven" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                          <children>
+                              <Label fx:id="lblEditTimeHS" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="33.0" prefWidth="300.0" styleClass="lblEditTime">
+                                  <VBox.margin>
+                                      <Insets top="20.0" />
+                                  </VBox.margin>
+                              </Label>
+                              <HBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="300.0" VBox.vgrow="ALWAYS">
+                                  <children>
+                                      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                          <children>
+                                              <Slider fx:id="sldHoursHS" majorTickUnit="1.0"  maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  minorTickCount="1" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" styleClass="sliderIngestionTime" VBox.vgrow="ALWAYS" />
+                                              <Label fx:id="lblHoursHS" alignment="CENTER">
+                                                  <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                  </font>
+                                                  <VBox.margin>
+                                                      <Insets right="20.0" top="10.0" />
+                                                  </VBox.margin>
+                                              </Label>
+                                          </children>
+                                      </VBox>
+                                      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                          <children>
+                                              <Slider fx:id="sldMinutesHS" majorTickUnit="5.0" max="59.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" min="0.0" minorTickCount="5" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" styleClass="sliderIngestionTime" VBox.vgrow="ALWAYS" />
+                                              <Label fx:id="lblMinutesHS">
+                                                  <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                  </font>
+                                                  <VBox.margin>
+                                                      <Insets right="20.0" top="10.0" />
+                                                  </VBox.margin>
+                                              </Label>
+                                          </children>
+                                      </VBox>
+                                  </children>
+                                  <padding>
+                                      <Insets bottom="20.0" />
+                                  </padding>
+                              </HBox>
+                          </children>
+                      </VBox>
+                  <Label fx:id="lblEditTimesPCM" styleClass="lblEditTimeColumnHeader" text="Label" GridPane.columnIndex="0" />
+                  <Label fx:id="lblEditTimesPCD" styleClass="lblEditTimeColumnHeader" text="Label" GridPane.columnIndex="1" />
+                  <Label fx:id="lblEditTimesPCV" styleClass="lblEditTimeColumnHeader" text="Label" GridPane.columnIndex="2" />
+                  <Label fx:id="lblEditTimesHS" styleClass="lblEditTimeColumnHeader" text="Label" GridPane.columnIndex="3" />
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="-Infinity" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="-Infinity" minHeight="0.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+</GridPane>

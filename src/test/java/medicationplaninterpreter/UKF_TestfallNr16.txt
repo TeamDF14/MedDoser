@@ -1,0 +1,15 @@
+<MP v="023" U="64C313FEEE974DAF8EEA4609E155C2A8" l="de-DE">
+<P g="Testfall" f="Nr. 16" egk="E998982310" b="1974-04-20" s="M"/>
+<A lanr="165630445" n="Dr. Xra Überall" s="Hauptstraße 55" z="01234" c="Am Ort" p="04562-12345" e="m.ueberall@mein-netz.de" t="2016-07-15"/>
+<O w="82"/>
+	<S c="412">
+		<M p="2058593" t="abs:"/>
+		<M p="4182765" t="mo:"/>
+		<M p="4473149" m="1" v="1" i="Als &quot;pill in the pocket&quot; bei erneutem Vorhofflimmern"/>
+		<M p="5047986" t="mo: abs:"/>
+		<M p="5541338" i="nach Pass"/>
+	</S>
+	<S c="418">
+		<M p="1667870" m="1"/>
+	</S>
+</MP>
