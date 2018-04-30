@@ -25,6 +25,8 @@ In order for the project to run correctly, additional projects must be added as 
 * **JavaUtil** - [Github](https://github.com/TeamDF14/JavaUtil)
 * **UKF2FHIRParser** - [Github](https://github.com/TeamDF14/UKF2FHIRParser)
 
+Learn [here](https://sbuechler.de/tipps-tricks/105-intellij-idea-import-mehrerer-projekte) how to set up a project that consists of several repositories in IntelliJ IDEA.
+
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
