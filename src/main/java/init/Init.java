@@ -18,6 +18,7 @@ public class Init {
 
     // Initialize the GPIO instance statically
     public static GPIOThread toggleGPIOStateInstance = new GPIOThread();
+    
     // Define the interval (in milliseconds) that forces the led and sound thread to trigger
     public static int reminderInterval = 20000;
 
