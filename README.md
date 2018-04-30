@@ -1,10 +1,10 @@
 # MedDoser
 
-The MedDoser device is a RaspberryPi equipped with a touchscreen and other components and helps patients take medication. It offers acoustic and visual memory functions and provides a history with which the course of the medication can be traced to the exact day and time. The information of the respective medication is based on the doctor prescribed medication plan on paper, whose barcode can be scanned. The read data are provided in a user interface that is operated exclusively with the finger. The user also has the option to manually adjust reminder times for each time of day.
+The MedDoser device is a RaspberryPi, equipped with a touchscreen and other components and helps patients take their medications. It offers acoustic and visual memory functions and provides a history with which the course of the medication can be traced to the exact day and time. The information of the respective medication is based on the doctor prescribed medication plan on paper, whose barcode can be scanned. The read data is provided in a user interface that is operated exclusively with the finger. The user also has the option to manually adjust reminder times for each ingestion time of the day.
 
 ## Getting Started (Prerequisit)
 
-The prerequisite is that you have the MedDoser as a device in front of you. The best way to follow the instructions that are described on the website (below "Further Information") or in the written elaboration. Please note that a separate dummy database has been created for the drug database because we did not receive a license to integrate the official drug database.
+The prerequisite is that you have the **MedDoser** as a device prepared in front of you. The best way to start is to follow the instructions that are described on the website (below "Further Information") or in the written elaboration. Please note that a separate dummy database has been created for the drug database because we did not receive a license to integrate the official drug database.
 
 ## Dependencies
 
@@ -12,6 +12,7 @@ In order for the project to run correctly, additional projects must be added as 
 
 * **JavaLogger** - [Github](https://github.com/StefanKuppelwieser/JavaLogger)
 * **JavaUtil** - [Github](https://github.com/TeamDF14/JavaUtil)
+* **UKF2FHIRParser** - [Github](https://github.com/TeamDF14/UKF2FHIRParser)
 
 ## Built With
 
