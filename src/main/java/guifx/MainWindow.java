@@ -122,7 +122,7 @@ public class MainWindow extends Application {
         preparePrimaryStage();
 
         // If there is no FHIR file already, prompt the user to scan a medicationPlan.
-        if (!util.FileSystem.bCheckFileExists(Init.newInputFile)){
+        if (!util.FileSystem.bCheckFileExists(Init.FHIRFile)){
 
             Stage rescanStage;
             FXMLLoader fxmlLoaderHistory = new FXMLLoader(getClass().getResource("scan.fxml"));

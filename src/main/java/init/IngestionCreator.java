@@ -8,7 +8,7 @@ import medicationplaninterpreter.BMPInterpreter;
 import medicationplaninterpreter.Section;
 import persistenceXML.PersistenceMedIngObject;
 import persistenceXML.Persistence;
-import help.Help;
+
 import java.util.*;
 import java.util.logging.Level;
 
@@ -28,7 +28,7 @@ public class IngestionCreator {
      */
     public static boolean bCreateMedicationIngestions(Persistence p) {
 
-        if (!util.FileSystem.bCheckFileExists(Init.newInputFile)){
+        if (!util.FileSystem.bCheckFileExists(Init.FHIRFile)){
             logger.log(Level.INFO, "<-- IngestionCreator--> No entries were inserted into the persistence file because the FHIR file does not exist yet.");
             return false;
         }

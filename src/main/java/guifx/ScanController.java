@@ -6,8 +6,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import ukfparser.UKFToFHIRParser;
-import help.Help;
+import ukf2fhir.UKFToFHIRParser;
 
 import java.util.logging.Level;
 import static logging.Logging.logger;
@@ -73,7 +72,7 @@ public class ScanController {
         tfScannedString.setDisable(true);
 
         // Hide the Cancel button as there is no opportunity for the user to go back on the start screen
-        if (!util.FileSystem.bCheckFileExists(Init.newInputFile)){
+        if (!util.FileSystem.bCheckFileExists(Init.FHIRFile)){
             btnCloseRescan.setVisible(false);
         }
 
@@ -101,7 +100,7 @@ public class ScanController {
 
 
         // Initialize the ukf parser once
-        UKFToFHIRParser ukftofhirparser = new UKFToFHIRParser();
+        UKFToFHIRParser ukftofhirparser = new UKFToFHIRParser(Init.dbFile, Init.FHIRFile);
 
 
         // Wait for an input in the invisible text field. The input is triggered by the barcode scanner. Each added character triggers the listener.

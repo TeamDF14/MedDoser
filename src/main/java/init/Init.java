@@ -32,7 +32,7 @@ public class Init {
     public final static String pathToLinux = "/home/shares/MedDoser/";
     private static String pathToOutputFile = "/";
     private static final String nameOfOutputFile = "FHIR_generated.xml";
-    public static File newInputFile;
+    public static File FHIRFile;
 
     // Persistence
     public static String pathToPersistenceFile = "/";
@@ -52,9 +52,9 @@ public class Init {
 
     // UKF
     public static final String encoding = "UTF-8";
-    private static String pathToUkfFile = "/ukfparser/";
-    private static final String nameOfUkfFile ="ukfString.txt";
-    public static File newUKFFile;
+    //private static String pathToUkfFile = "/ukf2fhir/";
+    //private static final String nameOfUkfFile ="ukfString.txt";
+   // public static File newUKFFile;
 
 
 
@@ -83,7 +83,7 @@ public class Init {
             pToDBFile = pathToLinux + nameOfDatabaseFile;
             pToSoundFile = pathToLinux + nameOfSoundFile;
             pToNewSoundFile = pathToLinux + "/" + nameOfSoundFile;
-            pToNewUIFFile = pathToLinux + nameOfUkfFile;
+            //pToNewUIFFile = pathToLinux + nameOfUkfFile;
         }
 
         // WINDOWS: Different path, depending on the location of the project
@@ -98,7 +98,7 @@ public class Init {
              pToDBFile =  pathToWindows + pathToDatabase + nameOfDatabaseFile;
              pToSoundFile =  pathToWindows + pathToSound + nameOfSoundFile;
 
-             pToNewUIFFile = pathToWindows + nameOfUkfFile;
+             //pToNewUIFFile = pathToWindows + nameOfUkfFile;
              pToNewSoundFile = pathToWindows + nameOfSoundFile;
         }
 
@@ -113,11 +113,11 @@ public class Init {
             pToPersistenceFile = jar.getParent() + File.separator + nameOfPersistenceFile;
             pToDBFile = jar.getParent() + File.separator + nameOfDatabaseFile;
             pToSoundFile = jar.getParent() + File.separator + nameOfSoundFile;
-            pToNewUIFFile = jar.getParent() + File.separator + nameOfUkfFile;
+            //pToNewUIFFile = jar.getParent() + File.separator + nameOfUkfFile;
             pToNewSoundFile = jar.getParent() + File.separator + soundFile;
 
             // Set this special path - important!
-            pathToUkfFile = "/ukfparser/";
+            //pathToUkfFile = "/ukf2fhir/";
         }
 
 
@@ -128,7 +128,7 @@ public class Init {
             pToPersistenceFile = URLDecoder.decode(pToPersistenceFile, encoding);
             pToDBFile = URLDecoder.decode(pToDBFile, encoding);
             pToSoundFile = URLDecoder.decode(pToSoundFile, encoding);
-            pToNewUIFFile = URLDecoder.decode(pToNewUIFFile, encoding);
+            //pToNewUIFFile = URLDecoder.decode(pToNewUIFFile, encoding);
             pToNewSoundFile = URLDecoder.decode(pToNewSoundFile, encoding);
 
         } catch (UnsupportedEncodingException e) {
@@ -137,13 +137,13 @@ public class Init {
 
         // Set the file variables
         //inputFile = new File(pToOutputFile);
-        newInputFile = new File(pToNewOutputFile);
+        FHIRFile = new File(pToNewOutputFile);
 
         persistenceFile = new File(pToPersistenceFile);
         dbFile = new File(pToDBFile);
         soundFile = new File(pToSoundFile);
 
-        newUKFFile = new File(pToNewUIFFile);
+        //newUKFFile = new File(pToNewUIFFile);
 
         newSoundFile = new File(pToNewSoundFile);
     }
@@ -160,7 +160,7 @@ public class Init {
         adjustPaths();
 
         // Create database instance
-        new ControlSQL();
+        new ControlSQL(dbFile);
 
         // Create a new persistence object (and file) and insert ingestions into the persistence file, if the FHIR file already exists.
         Persistence p = new Persistence();

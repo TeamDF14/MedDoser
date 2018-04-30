@@ -4,7 +4,7 @@ import init.Init;
 import org.apache.commons.io.IOUtils;
 import org.junit.*;
 import org.junit.runners.MethodSorters;
-import ukfparser.UKFToFHIRParser;
+import ukf2fhir.UKFToFHIRParser;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -36,7 +36,7 @@ public class MedicationplanInterpreterTest {
         }
 
         // Convert the ukf string to a HL7 FHIR file
-        UKFToFHIRParser ukfToFHIRParser = new UKFToFHIRParser();
+        UKFToFHIRParser ukfToFHIRParser = new UKFToFHIRParser(Init.dbFile, Init.FHIRFile);
         ukfToFHIRParser.parsing(targetFileStr);
         ukfToFHIRParser.print();
     }
@@ -44,7 +44,7 @@ public class MedicationplanInterpreterTest {
     @AfterClass
     public static void cleanMedicationplanInterpreter() {
         // Delete created files
-        Init.newInputFile.delete();
+        Init.FHIRFile.delete();
     }
 
     @Test
@@ -179,18 +179,18 @@ public class MedicationplanInterpreterTest {
     public void z_outputFileNotExists(){
 
         boolean caseOneDone = false;
-        File oldPath = Init.newInputFile;
+        File oldPath = Init.FHIRFile;
 
         for(int i = 0; i < 2; i++) {
 
             if(caseOneDone){
                 // manipulate path
-                Init.newInputFile = null;
-                assertEquals(null, Init.newInputFile);
+                Init.FHIRFile = null;
+                assertEquals(null, Init.FHIRFile);
             } else{
                 // manipulate path
-                Init.newInputFile = new File(Init.newInputFile + "FileNotExist");
-                assertTrue(!Init.newInputFile.exists());
+                Init.FHIRFile = new File(Init.FHIRFile + "FileNotExist");
+                assertTrue(!Init.FHIRFile.exists());
                 caseOneDone = true;
             }
 
@@ -266,10 +266,10 @@ public class MedicationplanInterpreterTest {
         }
 
         // restore manipulated path
-        Init.newInputFile = oldPath;
+        Init.FHIRFile = oldPath;
 
         // Check if the path was manipulated correctly
-        assertTrue(Init.newInputFile.exists());
+        assertTrue(Init.FHIRFile.exists());
         assertTrue(oldPath.exists());
     }
 }

@@ -1,7 +1,6 @@
 package medicationplaninterpreter;
-
+import init.Init;
 import persistenceSQL.ControlSQL;
-import help.Help;
 import java.util.ArrayList;
 
 /**
@@ -40,7 +39,7 @@ public class Section {
         this.titleCode = null;
         this.medications = null;
         this.freeText = null;
-        this.controlSQL = new ControlSQL();
+        this.controlSQL = new ControlSQL(Init.dbFile);
     }
 
     /**

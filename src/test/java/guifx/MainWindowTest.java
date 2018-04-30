@@ -6,11 +6,10 @@ import init.Init;
 import javafx.collections.ObservableList;
 import org.apache.commons.io.IOUtils;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import persistenceXML.PersistenceMedIngObject;
-import ukfparser.UKFToFHIRParser;
+import ukf2fhir.UKFToFHIRParser;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -47,7 +46,7 @@ public class MainWindowTest {
         }
 
         // Convert the ukf string to a HL7 FHIR file
-        UKFToFHIRParser ukfToFHIRParser = new UKFToFHIRParser();
+        UKFToFHIRParser ukfToFHIRParser = new UKFToFHIRParser(Init.dbFile, Init.FHIRFile);
         ukfToFHIRParser.parsing(targetFileStr);
         ukfToFHIRParser.print();
 
@@ -59,7 +58,7 @@ public class MainWindowTest {
 
     @AfterClass
     public static void cleanUp(){
-        Init.newInputFile.delete();
+        Init.FHIRFile.delete();
         Init.persistenceFile.delete();
     }
 

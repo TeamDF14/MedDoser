@@ -1,6 +1,5 @@
 package fhirparser;
 
-import help.Help;
 import init.Init;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -82,7 +81,7 @@ public class FHIRParser {
      */
     public FHIRParser() {
         // Initialize object ControlSQL
-        mySQL = new ControlSQL();
+        mySQL = new ControlSQL(Init.dbFile);
 
         // Save entries in ArrayList<Document>
         bReadHL7FhirDoc();
@@ -109,15 +108,15 @@ public class FHIRParser {
         documentsEntrys = new ArrayList<>();
 
         // Split the HL7 FHIR XML to seperate entry items
-        if(Init.newInputFile == null){
-            logger.log(Level.FINEST, ".. The Init.newInputfile '" + Init.newInputFile + "' is null! \n");
+        if(Init.FHIRFile == null){
+            logger.log(Level.FINEST, ".. The Init.newInputfile '" + Init.FHIRFile + "' is null! \n");
             return false;
         }
-        if(Init.newInputFile.exists() && Init.newInputFile.length() != 0) {
+        if(Init.FHIRFile.exists() && Init.FHIRFile.length() != 0) {
             // The method decomposes the HL7 FHIR document so that every child element 'entry' is added to the ArrayList documentsEntrys.
             // Decomposes the HL7 FHIR document so that every child element 'entry' is added to the ArrayList documentsEntrys
             try {
-                logger.log(Level.FINEST, ".. The FHIR source '" + Init.newInputFile + "' is parsed right now! \n");
+                logger.log(Level.FINEST, ".. The FHIR source '" + Init.FHIRFile + "' is parsed right now! \n");
                 // DOM parser factory
                 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
@@ -125,7 +124,7 @@ public class FHIRParser {
                 DocumentBuilder builder = factory.newDocumentBuilder();
 
                 // The entire XML file
-                Document document = builder.parse(Init.newInputFile);
+                Document document = builder.parse(Init.FHIRFile);
 
                 // The root Element
                 Element root = document.getDocumentElement();

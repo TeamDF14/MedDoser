@@ -2,9 +2,8 @@ package help;
 
 import init.Init;
 import org.apache.commons.io.IOUtils;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import ukfparser.UKFToFHIRParser;
+import ukf2fhir.UKFToFHIRParser;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -26,10 +25,10 @@ public class HelpTest {
 
         Init.adjustPaths();
 
-        Init.newInputFile.delete();
+        Init.FHIRFile.delete();
         Init.persistenceFile.delete();
 
-        assertFalse("File must not exist", util.FileSystem.bCheckFileExists(Init.newInputFile));
+        assertFalse("File must not exist", util.FileSystem.bCheckFileExists(Init.FHIRFile));
         assertFalse("File must not exist", util.FileSystem.bCheckFileExists(Init.persistenceFile));
 
         Init.adjustPaths();
@@ -51,13 +50,13 @@ public class HelpTest {
         }
 
         // Convert the ukf string to a HL7 FHIR file
-        UKFToFHIRParser ukfToFHIRParser = new UKFToFHIRParser();
+        UKFToFHIRParser ukfToFHIRParser = new UKFToFHIRParser(Init.dbFile, Init.FHIRFile);
         ukfToFHIRParser.parsing(targetFileStr);
         ukfToFHIRParser.print();
 
         Init.initialize();
 
-        assertTrue("File must exist", util.FileSystem.bCheckFileExists(Init.newInputFile));
+        assertTrue("File must exist", util.FileSystem.bCheckFileExists(Init.FHIRFile));
         assertTrue("File must exist", util.FileSystem.bCheckFileExists(Init.persistenceFile));
 
     }
