@@ -1,14 +1,25 @@
 # MedDoser
 
-The MedDoser device is a RaspberryPi, equipped with a touchscreen and other components and helps patients take their medications. It offers acoustic and visual memory functions and provides a history with which the course of the medication can be traced to the exact day and time. The information of the respective medication is based on the doctor prescribed medication plan on paper, whose barcode can be scanned. The read data is provided in a user interface that is operated exclusively with the finger. The user also has the option to manually adjust reminder times for each ingestion time of the day.
+![alt text](https://raw.githubusercontent.com/TeamDF14/MedDoser/master/src/main/resources/images/logo_meddoser.png "MedDoser Logo (TeamDF14)")
+
+
+The MedDoser is a RaspberryPi 3 Model B  equipped with a touchscreen and some other components and **helps patients to remember to take their medications**.
+
+It offers *acoustic* and *visual memory functions* and provides a **history** that gives the opportunity to track the ingestions to the exact day and time. The information of the respective medication is based on the doctor-prescribed medication plan on **sheet of paper**, whose barcode can be scanned. The read data is provided in a **user interface** that is operated exclusively with the *finger*. The user also has the option to manually **adjust reminder times** for each ingestion time of the day.
 
 ## Getting Started (Prerequisit)
 
-The prerequisite is that you have the **MedDoser** as a device prepared in front of you. The best way to start is to follow the instructions that are described on the website (below "Further Information") or in the written elaboration. Please note that a separate dummy database has been created for the drug database because we did not receive a license to integrate the official drug database.
+The prerequisite is that you have the **MedDoser**, consisting of a RaspberryPi 3, a 7 inch touchscreen, a real-time-clock and a speaker, prepared in front of you.
+
+If you want to know how to plug together these components, follow the instructions described on the two websites (below "Further Information") or in the written elaboration under [this address](#).
+
+You just want to check out how the software works and have no hardware available? No Problem, just run the source code on your *Windows environment*!
+
+Please note that we are using a separate SQLite *dummy database* that stores drug data, because the license of the official drug database is missing at the moment, but may be available in future releases.
 
 ## Dependencies
 
-In order for the project to run correctly, additional projects must be added as modules. Please note ReadMe from the respective repositories
+In order for the project to run correctly, additional projects must be added as modules into the main project. Please read the READMEs of the respective repositories in order to know what they do. Anyway, include them into your IDE:
 
 * **JavaLogger** - [Github](https://github.com/StefanKuppelwieser/JavaLogger)
 * **JavaUtil** - [Github](https://github.com/TeamDF14/JavaUtil)
