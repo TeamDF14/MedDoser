@@ -11,7 +11,7 @@ It offers *acoustic* and *visual memory functions* and provides a **history** th
 
 The prerequisite is that you have the **MedDoser**, consisting of a RaspberryPi 3, a 7 inch touchscreen, a real-time-clock and a speaker, prepared in front of you.
 
-If you want to know how to plug together these components, follow the instructions described on the two websites (below "Further Information") or in the written elaboration under [this address](#).
+If you want to know how to plug together these components, follow the instructions described on one of the two websites  or in the written elaboration (See below under "Further Information").
 
 You just want to check out how the software works and have no hardware available? No Problem, just run the source code on your *Windows environment*!
 
@@ -40,8 +40,10 @@ See also the list of [contributors](https://github.com/TeamDF14/MedDoser/graphs/
 
 ## Further information
 
-* **eHealth @RCBE Regensburg (OTH Regensburg)** - [Website](https://ehealth.rcbe.de/2018/04/27/meddoser-medikationsplan-auf-dem-raspberry-pi/)
-* **sbuechler.de** - [Website](https://sbuechler.de/projekte/hardware/87-meddoser)
+* **eHealth @RCBE Regensburg (OTH Regensburg)** - [Website](ehealth.rcbe.de/2018/04/27/meddoser-medikationsplan-auf-dem-raspberry-pi/)
+* **sbuechler.de** - [Website](sbuechler.de/projekte/hardware/87-meddoser)
+* **Report** -
+[Download (pdf) ](https://sbuechler.de/_cstm/medDoser.pdf).
 
 
 ## License
