@@ -42,7 +42,7 @@ See also the list of [contributors](https://github.com/TeamDF14/MedDoser/graphs/
 
 ## Further information
 
-* **eHealth @RCBE Regensburg (OTH Regensburg)** - [Website](ehealth.rcbe.de/2018/04/27/meddoser-medikationsplan-auf-dem-raspberry-pi/)
+* **eHealth @RCBE Regensburg (OTH Regensburg)** - [Website](http://ehealth.rcbe.de/2018/04/27/meddoser-medikationsplan-auf-dem-raspberry-pi/)
 * **sbuechler.de** - [Website](sbuechler.de/projekte/hardware/87-meddoser)
 * **Report** -
 [Download (pdf) ](https://sbuechler.de/_cstm/medDoser.pdf).
