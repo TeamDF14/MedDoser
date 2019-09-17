@@ -36,7 +36,7 @@ Learn [here](https://sbuechler.de/tipps-tricks/105-intellij-idea-import-mehrerer
 ## Authors
 
 * **Sebastian Büchler** - [Github](https://github.com/sebikolon) - [Website](https://wwww.sbuechler.de)
-* **Stefan Kuppelwieser** - [Github](https://github.com/StefanKuppelwieser) - [Website](https://wwww.kuppelwieser.net)
+* **Stefan Kuppelwieser** - [Github](https://github.com/StefanKuppelwieser) - [Website](https://www.kuppelwieser.net)
 
 See also the list of [contributors](https://github.com/TeamDF14/MedDoser/graphs/contributors) who participated in this project.
 
